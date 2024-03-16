@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <!-- <div v-for="angka in 10">{{ angka }}</div>
+      <ol  v-for=" angka in 10">
+        <li>{{ angka }}</li>
+      </ol> -->
+      <!-- <div v-for="i in fruits">
+            {{ fruits }}
+      </div> -->
+      <ul v-for="(i,index) in fruits">
+        <li>{{ i }}&nbsp;{{ index }}</li>
+        <button @click="hapus">x</button>
+      </ul>
+      <ul style="display: flex; list-style: none; " v-for="i in player">
+        <li style="display: inline; margin-right: 10px;">{{ i.name }}</li>
+      </ul>
+    </div>
+    <script type="module">
+      import { createApp } from "https://unpkg.com/vue@3/dist/vue.esm-browser.js";
+      createApp({
+        data() {
+          return {
+            fruits: ["apple", "anggur", "naruto", "melon", "lemon"],
+            player : [
+                {name: 'idris',lahir:'sukabumi'},
+                {name: 'fifi',lahir:'bekasi'},
+                {name: 'naruto',lahir:'konoha'},
+            ]
+          };
+        },
+        methods: {
+          hapus(index) {
+            this.fruits.splice(index,1)
+          },
+        },
+      }).mount("#app");
+    </script>
+  </body>
+</html>

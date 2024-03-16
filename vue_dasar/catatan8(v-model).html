@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <!-- v-model text -->
+      <div>
+        <label for="username">username</label><br />
+        <input
+          type="text"
+          id="username"
+          v-model="username"
+          placeholder="username"
+        />
+      </div>
+      <!-- penutup v-model text -->
+
+      <!-- v-model text area -->
+      <div>
+        <label for="alamat">alamat:</label><br />
+        <textarea
+          name="alamat"
+          v-model="alamat"
+          id="alamat"
+          cols="30"
+          rows="10"
+        ></textarea>
+      </div>
+      <!-- penutup text area -->
+      <!-- radio -->
+      <div>
+        <label for="gender">Gender :</label><br>
+        <input type="radio" value="pria" v-model="gender">Pria
+        <input type="radio" value="wanita" v-model="gender">Wanita
+
+      </div>
+      <!-- penutup radio -->
+      <!-- checkbox -->
+      <div>
+        <label for="hobi">hobi :</label><br>
+        <input type="checkbox" v-model="hobi" value="sepak bola">sepak bola <br>
+        <input type="checkbox" v-model="hobi" value="basket">basket <br>
+        <input type="checkbox" v-model="hobi" value="catur">catur <br>
+        <input type="checkbox" v-model="hobi" value="badminton">badminton <br>
+      </div>
+      <div>
+        <p>username : {{ username }}</p>
+        <p>alamat : {{ alamat }}</p>
+        <p>gender : {{ gender }}</p>
+        <p>hobi : {{ hobi }}</p>
+      </div>
+      <!-- penutup chechkbox -->
+    </div>
+
+    <script type="module">
+      import { createApp } from "https://unpkg.com/vue@3/dist/vue.esm-browser.js";
+      createApp({
+        data() {
+          return {
+            username: "",
+            alamat: "",
+           gender: "",
+           hobi: [],
+          };
+        },
+      }).mount("#app");
+    </script>
+  </body>
+</html>

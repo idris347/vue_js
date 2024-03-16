@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <div id="app">
+        {{ message }},<br>
+        <div v-html="message2"></div> 
+       <button @click="tambah()">tambah</button><br>
+        {{ count }},<br>
+        <button @click="hapus()">kurang</button>
+    </div>
+    <script type="module">
+        import { createApp } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
+        createApp({
+            data(){
+                return {
+                    count : 0,
+                    message:'hello fifi, saya mau belajar vue js',
+                    message1 :'hello world',
+                    message2 :'<b>'+'hello world'+'</b>',
+                }
+            },
+            methods:{
+                tambah(){
+                    this.count++
+                },
+                hapus(){
+                    this.count--
+                }
+            }
+        }).mount('#app')
+
+    </script>
+</body>
+</html>

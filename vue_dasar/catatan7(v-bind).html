@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <div>
+        <a v-bind:href="uri">s</a>
+      </div>
+      <h2>user</h2>
+      <div>name : {{ user.name }}</div>
+      <div>
+        <img v-bind:style="{width:responsiv}" v-bind:src="user.image" alt="" />
+      </div>
+    </div>
+    <script type="module">
+      import { createApp } from "https://unpkg.com/vue@3/dist/vue.esm-browser.js";
+      createApp({
+        data() {
+          return {
+            uri: "https://google.com",
+            user: {
+              name: "meg",
+              image:
+                "https://images.pexels.com/photos/1624496/pexels-photo-1624496.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            },
+            responsiv: "200px",
+          };
+        },
+      }).mount("#app");
+    </script>
+  </body>
+</html>
